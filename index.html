@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>RGFA</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+
+    <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->    
+</head>
+<body>
+    <header>
+      <nav>
+          <a class="logo" href="/rfga">
+              <img src="img/logo.png" alt="RGFA" />
+          </a> 
+          <ul>
+              <li>Menu 1</li>
+              <li>Menu 2</li>
+              <li>Menu 3</li>
+              <li>Menu 4</li>
+          </ul>
+      </nav>
+      <section class="actions">     
+          <input type="text" id="searchKey" />
+          <button id="btnSearch">Search</button>
+          <button id="btnAdd" class="button-add">New block</button>
+      </section>
+    </header>
+
+    <section class="wrapper">
+
+		<form class="blockForm block-form clearfix">
+			<div class="kill">X</div>
+			<div class="form-content">
+				<label>Name:</label>
+				<input type="text" id="name" name="name" value="" required>
+
+				<label>Description:</label>
+				<textarea id="description" name="description"></textarea>
+
+				<label>Width:</label>
+				<input type="text" id="width" name="width" value=""  />
+
+				<label>Height:</label>
+				<input type="text" id="height" name="height" value=""  />
+
+				<label>Region:</label>
+				<input type="text" id="location" name="location" value=""  />
+
+				<label>Year:</label>
+				<input type="text" id="year" name="year" value=""  />
+  
+				<label>Id:</label>
+				<input id="blockId" name="id" type="text" disabled />
+
+			</div>
+			<div class="form-actions">
+				<img id="pic" height="100" />
+				<button id="btnSave">Save</button>
+				<button id="btnDelete">Delete</button>
+			</div>
+
+		</form>		
+		        <script type="text/template" id="block-form"></script>      
+
+		<div class="content">
+			<section class="block-area">
+				<section class="block-list">
+    <script type="text/template" id="block-area">
+					<% _.each( object["blocks"],function(block) { %>
+					<article data-id="<%- block.id %>" class="block block-large h<%- block.height %> w<%- block.width %>">
+					  <h1 class="block-name"><%- block.name %></h1>  
+					  <p><%- block.description %></p>
+					</article>
+					<% }); %>        
+			</script>
+        </section>
+    	</section>
+
+		</div>
+    </section>        
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/backbone-validation-min.js"></script>
+    <script src="js/masonry.js"></script>
+     <!--<script src="js/backbone-custom.js"></script>-->
+
+   <script src="js/main.js"></script>
+
+</body>
+</html>
